@@ -38,6 +38,8 @@ public class MainActivity extends Activity implements SensorEventListener {
             ax=event.values[0];
             ay=event.values[1];
             az=event.values[2];
+            System.out.println("new result");
+            System.out.println(ax);
         }
     }
 
@@ -63,19 +65,19 @@ public class MainActivity extends Activity implements SensorEventListener {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.main);
+        //setContentView(R.layout.main);
         senSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         senAccelerometer = senSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         senSensorManager.registerListener(this, senAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
 
-        TextView textViewX = (TextView) findViewById(R.id.x);
-        textViewX.setText(""+ax);
+//        TextView textViewX = (TextView) findViewById(R.id.x);
+//        textViewX.setText(""+ax);
 
-        TextView textViewY = (TextView) findViewById(R.id.x);
-        textViewY.setText(""+ay);
-
-        TextView textViewZ = (TextView) findViewById(R.id.x);
-        textViewZ.setText(""+az);
+//        TextView textViewY = (TextView) findViewById(R.id.x);
+//        textViewY.setText(""+ay);
+//
+//        TextView textViewZ = (TextView) findViewById(R.id.x);
+//        textViewZ.setText(""+az);
 
         mView = buildView();
 
